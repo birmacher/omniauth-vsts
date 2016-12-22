@@ -52,7 +52,7 @@ module OmniAuth
 
       def build_access_token
         assertion = request.params["code"]
-        client.get_token({:assertion => assertion, client_assertion => options.client_secret, :redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true)))
+        client.get_token({:assertion => assertion, :client_assertion => options.client_secret, :redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true)))
       end
     end
   end
